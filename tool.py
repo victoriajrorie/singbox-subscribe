@@ -1,7 +1,7 @@
 import base64,requests,random,string,re,chardet,urllib.parse
 import warnings
 from cryptography.utils import CryptographyDeprecationWarning
-with warnings.catch_warnings("ignore", category=CryptographyDeprecationWarning):
+with warnings.catch_warnings("ignore", CryptographyDeprecationWarning):
     import paramiko
 from scp import SCPClient
 
@@ -334,4 +334,5 @@ class ConfigSSH:
 
     def close(self):
         self.ssh.close()
+
 
